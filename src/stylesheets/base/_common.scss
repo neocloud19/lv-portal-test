@@ -1,0 +1,22 @@
+@import "../components/colors";
+@import "../components/typography";
+
+.navbar-header img{
+  width: 94%;
+}
+
+.navbar-header{
+  width: 14%;
+}
+
+.lv-copyright{
+
+  padding-top: 50px;
+  font-size: 12px;
+  font-family: $lv-monse-light;
+
+  p{
+    color: $lv-color-light-gray;
+  }
+}
+

@@ -1,0 +1,26 @@
+{
+  "name": "livevox-portal",
+  "version": "1.0.0",
+  "description": "Test for the LiveVox Front-End-UX position",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neocloud19/portal-test.git"
+  },
+  "author": "Alejandro Onatra",
+  "license": "ISC",
+  "homepage": "index.html"
+}

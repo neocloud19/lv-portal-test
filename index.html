@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Livevox</title>
+
+    <!--META-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- STYLESHEETS -->
+
+    <!-- Bootstrap -->
+    <!--<link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+    <link rel="stylesheet"  href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Main styles-->
+    <link rel="stylesheet"  href="src/stylesheets/styles.min.css" />
+
+</head>
+
+<body>
+
+<!-- dist: livevox -->
+<div class="container-fluid" ng-app="livevox.layout">
+    <!-- controller: HomeController -->
+    <div ng-controller="HomeController as vm" ng-init="vm.api.loadNavbarMenu()">
+
+        <!-- NAVBAR -->
+        <div class="row">
+            <nav class="navbar navbar-default">
+
+                <button type="button" class=" pull-left navbar-toggle" data-toggle="collapse" data-target="#livevoxNavBar">
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-header">
+                    <img src="src/img/livevox-logo.svg">
+                </div>
+
+                <div class="collapse navbar-collapse" id="livevoxNavBar">
+
+                    <div ng-repeat="menuItem in vm.layout.menuList.items">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+
+                                <!--Main Menu Item-->
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="{{menuItem.url}}">{{menuItem.label}} <span class="caret" ng-show="menuItem.items.length > 0"></span></a>
+
+                                <!--Sub Menu Item-->
+                                <ul class="dropdown-menu" ng-show="menuItem.items.length > 0">
+                                    <div ng-repeat="subMenuItem in menuItem.items" >
+                                        <li><a href="{{subMenuItem.url}}">{{subMenuItem.label}}</a></li>
+                                    </div>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- JS LIBRARIES -->
+
+<!-- AngularJS -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
+<script src="bower_components/angular/angular.min.js"></script>
+<!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>-->
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>-->
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<!-- JQuery -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!--Livevox-->
+<script src="src/javascripts/livevox.min.js"></script>
+
+</body>
+
+</html>
