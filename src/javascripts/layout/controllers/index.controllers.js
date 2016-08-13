@@ -14,8 +14,8 @@
         // --Layout Attributes
         vm.layout = {
 
-            menuList: {}
-
+            menuList: {},
+            menuMobileToggle: false
         };
 
 
@@ -40,7 +40,7 @@
             function successGetMenu(response) {
 
                 vm.layout.menuList = response.data;
-
+                
                 // --debug
                 console.log('The recieved message is: ');
                 console.log(vm.layout.menuList);

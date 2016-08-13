@@ -10,8 +10,7 @@
         <!-- STYLESHEETS -->
 
         <!-- Bootstrap -->
-        <!--<link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
-        <link rel="stylesheet"  href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
         <!-- Main styles-->
         <link rel="stylesheet"  href="css/styles.min.css" />
@@ -25,16 +24,34 @@
             <!-- controller: HomeController -->
             <div ng-controller="HomeController as vm" ng-init="vm.api.loadNavbarMenu()">
 
+                <!--UPPER PANEL: MOBILE-->
+                <div class="row lv-upper-panel-mobile hidden-md hidden-lg hidden-sm">
+
+                    <div class="col-xs-1">
+                        <button type="button" class=" lv-mobile-hamburguer pull-left navbar-toggle" data-toggle="collapse" data-target="#livevoxNavBar" ng-show="!vm.layout.menuMobileToggle" ng-click="vm.layout.menuMobileToggle = true">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="lv-icon-xs col-xs-1 col-xs-offset-2 text-center ">
+                        <img src="img/lv-logo-xs.png">
+                    </div>
+
+                    <div class=" lv-mobile-toggle-close pull-right" data-toggle="collapse" data-target="#livevoxNavBar" ng-show="vm.layout.menuMobileToggle" ng-click="vm.layout.menuMobileToggle = false">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </div>
+
+                </div>
+
                 <!-- NAVBAR -->
                 <div class="row lv-header">
 
                     <div>
                         <nav class="navbar navbar-default lv-navbar">
 
-                            <button type="button" class=" pull-left navbar-toggle" data-toggle="collapse" data-target="#livevoxNavBar">
-                                <span class="icon-bar"></span>
-                            </button>
-
+                            <!--Hidden: Mobile-->
                             <div class="navbar-header hidden-xs">
                                 <img src="img/lv-logo-md.png">
                             </div>
@@ -45,8 +62,16 @@
                                     <li class="dropdown">
 
                                         <!--Main Menu Item-->
-                                        <a class="dropdown-toggle lv-navbar-menu-item" data-toggle="dropdown" href="{{menuItem.url}}">
-                                            <div>{{menuItem.label}} <span class="caret hidden-sm hidden-md hidden-lg" ng-show="menuItem.items.length > 0"></span></div>
+                                        <a class="dropdown-toggle lv-navbar-menu-item" data-toggle="dropdown" href="{{menuItem.url}}" target="_blank">
+
+                                            <div>
+                                                {{menuItem.label}}
+
+                                                <!--Hidden: Mobile-->
+                                                <span class="glyphicon glyphicon-chevron-right hidden-sm hidden-md hidden-lg" ng-show="menuItem.items.length > 0"></span>
+                                            </div>
+
+                                            <!--Hidden: Mobile-->
                                             <div class="lv-navbar-menu-item-underline hidden-xs"></div>
                                         </a>
 
@@ -82,46 +107,56 @@
                 </div>
 
                 <!-- CAROUSEL -->
-                <div class="row">
-                    <div id="livevoxCarousel" class="carousel slide" data-ride="carousel">
+                <div class="row" ng-show="!vm.layout.menuMobileToggle">
+                    <div id="livevoxCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
 
                         <!--Text-->
-                        <div class="col-md-7 col-lg-7 hover-slide hover lv-carousel-banner">
-                            <div class="lv-carousel-maintext">
-                                <p>PRIVATE VOIP CLOUD&trade; CONTACT CENTER</p>
+                        <div class="row">
+                            <div class="col-lg-9 hover-slide hover lv-carousel-banner">
+                                <div class="lv-carousel-maintext">
+                                    <p>PRIVATE VOIP CLOUD&trade; CONTACT CENTER</p>
+                                </div>
+                                <div class="lv-carousel-line hidden-xs"></div>
+                                <div class="lv-carousel-subtext">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue leo pharetra ligula rutru hendrerit sed vel lacus. Vivamus tortor est, eleifend non imperdiet vitae egestas et lectus. Sed tort sem, interdum quis tortor a, cursus venenatis risus. Cras egetrisus elit. Integer ac tincidunt mauris.</p>
+                                </div>
                             </div>
-                            <div class="lv-carousel-line"></div>
-                            <div class="lv-carousel-subtext">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue leo pharetra ligula rutru hendrerit sed vel lacus. Vivamus tortor est, eleifend non imperdiet vitae egestas et lectus. Sed tort sem, interdum quis tortor a, cursus venenatis risus. Cras egetrisus elit. Integer ac tincidunt mauris.</p>
+
+                        </div>
+
+                        <div class="row lv-carousel-buttons ">
+                            <!--Buttons-->
+                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                <button type="button" class="btn btn-primary lv-carousel-btn-left">Learn More</button>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                <button type="button" class="btn btn-primary lv-carousel-btn-right">Request a Demo</button>
                             </div>
                         </div>
 
-                        <!--Buttons-->
-                        <div class="col-xs-12 col-md-12 col-lg-12 hover-slide hover text-center lv-carousel-buttons">
-                            <button type="button" class="btn btn-primary lv-carousel-btn-left">Learn More</button>
-                            <button type="button" class="btn btn-primary lv-carousel-btn-right">Request a Demo</button>
+                        <div class="row">
+                            <!-- Indicators -->
+                            <!--Hidden: Mobile-->
+                            <ol class="carousel-indicators hidden-xs" >
+                                <li data-target="#livevoxCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#livevoxCarousel" data-slide-to="1"></li>
+                                <li data-target="#livevoxCarousel" data-slide-to="2"></li>
+                            </ol>
                         </div>
-
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#livevoxCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#livevoxCarousel" data-slide-to="1"></li>
-                            <li data-target="#livevoxCarousel" data-slide-to="2"></li>
-                        </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
 
-                            <div class="item active">
+                            <div class="item active lv-carousel-img">
                                 <img src="img/lv-carousel-1-md.png" alt="office" width="1920" height="720">
                             </div>
 
-                            <div class="item">
+                            <div class="item lv-carousel-img">
                                 <img src="img/lv-carousel-2-md.png" alt="call center" width="1920" height="720">
                             </div>
 
-                            <div class="item">
+                            <div class="item lv-carousel-img">
                                 <img src="img/lv-carousel-3-md.png" alt="services" width="1920" height="720">
                             </div>
                         </div>
@@ -143,22 +178,15 @@
         <!-- JS LIBRARIES -->
 
         <!-- AngularJS -->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
-        <script src="../bower_components/angular/angular.min.js"></script>
-        <!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>-->
-        <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>-->
-        <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
 
         <!-- JQuery -->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
         <!-- Bootstrap -->
-        <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!--Livevox-->
         <script src="js/livevox.min.js"></script>

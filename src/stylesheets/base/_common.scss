@@ -20,3 +20,48 @@
   }
 }
 
+.lv-upper-panel-mobile{
+
+  background-color: $lv-color-blue;
+  height: 55px;
+
+}
+
+.lv-mobile-hamburguer{
+
+  border: none;
+
+  span {
+    background-color: #FFFFFF;
+    font-size: 10px;
+  }
+
+  .icon-bar{
+    height: 4px;
+  }
+
+}
+
+
+.lv-mobile-toggle-close{
+
+  background-color: $lv-color-blue;
+  margin-top: 15px;
+  margin-right: 10px;
+
+  span {
+
+    color: #FFFFFF;
+    font-size: 20px;
+  }
+}
+
+.lv-icon-xs{
+
+  margin-top: 5px;
+
+  img{
+    width: 150px;
+  }
+}
+

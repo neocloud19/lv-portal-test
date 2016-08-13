@@ -24,9 +24,42 @@
   color: #bcbcbc;
 }
 
+.lv-upper-panel-mobile {
+  background-color: #154688;
+  height: 55px;
+}
+
+.lv-mobile-hamburguer {
+  border: none;
+}
+.lv-mobile-hamburguer span {
+  background-color: #FFFFFF;
+  font-size: 10px;
+}
+.lv-mobile-hamburguer .icon-bar {
+  height: 4px;
+}
+
+.lv-mobile-toggle-close {
+  background-color: #154688;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.lv-mobile-toggle-close span {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.lv-icon-xs {
+  margin-top: 5px;
+}
+.lv-icon-xs img {
+  width: 150px;
+}
+
 .lv-navbar {
   background-color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   border: 0px;
 }
 .lv-navbar .navbar-header {
@@ -101,35 +134,69 @@
   font-family: "Montserrat Light", arial;
   font-size: 12px;
 }
+.lv-navbar .navbar-nav .dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: #bcbcbc;
+}
 
 @media (max-width: 767px) {
+  .lv-header {
+    height: 0px;
+  }
+
   .lv-navbar {
-    background-color: #154688;
-    border: 0px;
+    padding-left: 20px;
   }
   .lv-navbar .lv-navbar-menu-item {
-    font-family: "Montserrat Light", arial;
+    font-family: "Montserrat Bold", arial;
     font-size: 24px;
     background-color: #FFFFFF;
   }
+  .lv-navbar .lv-navbar-menu-item span {
+    float: right;
+    color: #5497f8;
+    transform: rotate(90deg);
+  }
   .lv-navbar .navbar-nav ul li {
-    padding-bottom: 20px;
+    padding-bottom: 5px;
   }
   .lv-navbar .navbar-nav > li > a {
     color: #154688;
   }
+  .lv-navbar .navbar-nav a:hover {
+    color: #bcbcbc;
+  }
+  .lv-navbar .navbar-nav .open a:hover {
+    color: #bcbcbc;
+    background-color: #ffffff;
+  }
+  .lv-navbar .navbar-nav .open a:focus {
+    color: #bcbcbc;
+    background-color: #ffffff;
+  }
   .lv-navbar .navbar-nav .dropdown-menu {
     background-color: #FFFFFF;
+    width: 100%;
+    border-bottom: 0px solid;
   }
   .lv-navbar .navbar-nav .dropdown-menu a {
     font-family: "Montserrat Light", arial;
     font-size: 24px;
+  }
+  .lv-navbar .navbar-nav .dropdown.open span {
+    transform: rotate(270deg);
+    transition: transform 0.2s linear;
+  }
+  .lv-navbar .navbar-nav .dropdown.close span {
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
   }
 }
 .lv-carousel-banner {
   position: fixed;
   z-index: 3;
   padding-top: 80px;
+  padding-left: 60px;
 }
 .lv-carousel-banner .lv-carousel-maintext {
   font-size: 72px;
@@ -152,30 +219,89 @@
 .lv-carousel-buttons {
   position: fixed;
   z-index: 3;
-  padding-top: 30%;
+  padding-top: 550px;
   font-size: 30px;
   font-family: "Montserrat Bold", arial;
   color: #154688;
+  width: 100%;
 }
 
 .carousel {
-  border-bottom-color: #154688;
   border-bottom: 6px solid;
+  border-bottom-color: #154688;
 }
 .carousel .lv-carousel-btn-left {
-  width: 150px;
-  font-size: 12px;
+  width: 300px;
+  font-size: 30px;
   font-family: "Montserrat Bold", arial;
   border-radius: 0px;
   background-color: rgba(0, 0, 0, 0.3);
   border-style: solid;
   border-color: black;
   border-width: 4px;
+  float: right;
 }
 .carousel .lv-carousel-btn-right {
-  width: 150px;
-  font-size: 12px;
+  width: 300px;
+  font-size: 30px;
   font-family: "Montserrat Bold", arial;
   border-radius: 0px;
   background-color: #154688;
+}
+.carousel .lv-carousel-img img {
+  max-width: none;
+}
+
+@media (max-width: 767px) {
+  .lv-carousel-banner {
+    position: fixed;
+    z-index: 3;
+    padding-top: 80px;
+    padding-left: 30px;
+  }
+  .lv-carousel-banner .lv-carousel-maintext {
+    font-size: 30px;
+    font-family: "Montserrat Bold", arial;
+    color: #ffffff;
+  }
+  .lv-carousel-banner .lv-carousel-line {
+    width: 100%;
+    height: 4px;
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+  .lv-carousel-banner .lv-carousel-subtext {
+    font-size: 20px;
+    font-family: "Open Sans Light", arial;
+    color: #ffffff;
+    padding-top: 20px;
+  }
+
+  .lv-carousel-buttons {
+    padding-left: 20px;
+  }
+
+  .carousel {
+    border-bottom-color: #154688;
+    border-bottom: 6px solid;
+  }
+  .carousel .lv-carousel-btn-left {
+    font-family: "Montserrat Bold", arial;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .carousel .lv-carousel-btn-right {
+    font-family: "Montserrat Bold", arial;
+    border-radius: 0px;
+    background-color: #154688;
+    width: 100%;
+  }
+  .carousel .lv-carousel-img img {
+    max-width: none;
+  }
 }
